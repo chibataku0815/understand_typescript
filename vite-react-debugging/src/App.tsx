@@ -6,9 +6,19 @@ function App() {
   const [count, setCount] = useState(0)
 
   const increment = () => {
-    console.info(`debbuger`)
     setCount((count) => count + 1)
   }
+
+  // rest paramter
+  const add = (...numbers: number[]) => {
+    return numbers.reduce((curResult, curValue) => {
+      return curResult +curValue
+    }, 0)
+  }
+
+  const addedNumbers = add(5, 10, 31, 2, 3.5)
+
+  console.info(addedNumbers)
 
   return (
     <div className="App">
